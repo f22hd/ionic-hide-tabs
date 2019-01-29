@@ -1,2 +1,19 @@
-<ion-nav [root]="rootPage"></ion-nav>
+
+<ion-menu [content]="content">
+   <ion-header>
+    <ion-toolbar>
+        <ion-title>Title</ion-title>
+    </ion-toolbar>
+   </ion-header>
+  
+   
+    <ion-content>
+        <ion-list>
+            <button ion-item menuClose *ngFor="let page of sideMenuList" (click)="goToPage(page)">{{page.title}}</button>
+        </ion-list>
+    </ion-content>
+
+</ion-menu>
+
+<ion-nav [root]="rootPage" type="overlay" #content swipeBackEnabled="false"></ion-nav>
  
